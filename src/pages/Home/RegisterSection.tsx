@@ -43,12 +43,6 @@ export const RegisterSection = ({handleRegister}: RegisterSectionProps) => {
                 value={(formResponses['email'] || "")}
                 onChange={({target: {value}}) => handleInputChange(value, 'email')}/>
 
-            <Input
-                label={"Curp"}
-                required={true}
-                placeholder={"CURP9342HVZRP90S"}
-                value={(formResponses['curp'] || "")}
-                onChange={({target: {value}}) => handleInputChange(value, 'curp')}/>
 
             <ButtonContainer>
                 <MainButton title={"Registrar"} onAction={handleRegister}/>

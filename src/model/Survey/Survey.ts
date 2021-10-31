@@ -97,9 +97,9 @@ export const Survey: Array<SurveyModel> = [
                             },
                             {
                                 id: generateUniqSerial(),
-                                name: "Distrito Electoral",
+                                name: "Seccion Electoral",
                                 placeHolder: "9999",
-                                label: "Ingresa distrito",
+                                label: "Ingresa Seccion",
                                 field: "electoralDistrict"
                             }
                         ]
@@ -118,7 +118,57 @@ export const Survey: Array<SurveyModel> = [
                 questions: [
                     {
                         id: generateUniqSerial(),
-                        title: "¿Actualmente cuál es tu ocupación?\nPuedes seleccionar hasta tres casillas",
+                        title: "¿Cuál ha sido tu último grado de estudios que hayas concluido?",
+                        type: "select",
+                        field: "level_edu",
+                        options: [
+                            {
+                                id: "Primaria",
+                                value: "Primaria"
+                            },
+                            {
+                                id: "Secundaria",
+                                value: "Secundaria"
+                            },
+                            {
+                                id: "Preparatoria",
+                                value: "Preparatoria"
+                            },
+                            {
+                                id: "Universidad",
+                                value: "Universidad"
+                            },
+                            {
+                                id: "Posgrado",
+                                value: "Posgrado"
+                            },
+                            
+                        ]
+                    },
+                    {
+                        id: generateUniqSerial(),
+                        title: "¿Trabajas en lo que estudiaste?",
+                        type: "options",
+                        options: [
+                            {
+                                id: "workInYourStudy01",
+                                value: "Si"
+                            },
+                            {
+                                id: "workInYourStudy02",
+                                value: "No"
+                            }
+                        ],
+                        field: "workInYourStudy"
+                    }
+                ]
+            },
+            {
+                id: generateUniqSerial(),
+                questions: [
+                    {
+                        id: generateUniqSerial(),
+                        title: "¿Actualmente cuál es tu ocupación? \nPuedes seleccionar hasta tres casillas",
                         type: "checkbox",
                         field: "ocupation",
                         options: [
@@ -136,12 +186,33 @@ export const Survey: Array<SurveyModel> = [
                             },
                             {
                                 id: "ocupation04",
-                                value: "Otro 1"
+                                value: "Desemplead@ / Pensionad@"
                             },
                             {
                                 id: "ocupation05",
-                                value: "Otro 2"
+                                value: "Emplead@ informal"
+                            },
+                            {
+                                id: "ocupation06",
+                                value: "Trabajo doméstico y/o de cuidado"
+                            },
+                            {
+                                id: "ocupation07",
+                                value: "Negocio propio y/o familiar"
+                            },
+                            {
+                                id: "ocupation08",
+                                value: "Freelancer"
+                            },
+                            {
+                                id: "ocupation09",
+                                value: "Docencia / Academía"
+                            },
+                            {
+                                id: "ocupation10",
+                                value: "Nivel de Estudios"
                             }
+
                         ]
                     }
                 ]
@@ -186,7 +257,60 @@ export const Survey: Array<SurveyModel> = [
                 questions: [
                     {
                         id: generateUniqSerial(),
-                        title: "¿Qué estudiaste?",
+                        title: "Ahora queremos conocer más sobre tu formación académica \nSelecciona el área de conocimiento en el que te especializas",
+                        type: "select",
+                        placeHolder: "Selecciona una opción",
+                        options: [
+                            {
+                                id: generateUniqSerial(),
+                                value: "Negocios y administración"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Ciencias sociales y estudios del comportamiento"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Ingeniería, manufactura y construcción "
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Educación"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Ciencias naturales, exactas y de la computación"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Matemáticas y estadística"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Servicios"
+                            },{
+                                id: generateUniqSerial(),
+                                value: "Artes y humanidades"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Salud"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Agronomía y veterinaria"
+                            },
+                            {
+                                id: generateUniqSerial(),
+                                value: "Otro"
+                            }
+
+                        ],
+                        field: "studyArea"
+                    },
+                    {
+                        id: generateUniqSerial(),
+                        title: "¿Selecciona tu especialidad?",
                         type: "select",
                         placeHolder: "Selecciona una opción",
                         options: [
@@ -203,24 +327,9 @@ export const Survey: Array<SurveyModel> = [
                                 value: "Preparatoria"
                             }
                         ],
-                        field: "studyLevel"
-                    },
-                    {
-                        id: generateUniqSerial(),
-                        title: "¿Trabajas en lo que estudiaste?",
-                        type: "options",
-                        options: [
-                            {
-                                id: "workInYourStudy01",
-                                value: "Si"
-                            },
-                            {
-                                id: "workInYourStudy02",
-                                value: "No"
-                            }
-                        ],
-                        field: "workInYourStudy"
+                        field: "studyspecialitiy"
                     }
+                    
                 ]
             },
             {
@@ -231,6 +340,10 @@ export const Survey: Array<SurveyModel> = [
                         title: "¿En que actividades participas que no son de trabajo?\nPuedes seleccionar hasta tres casillas",
                         type: "checkbox",
                         options: [
+                            {
+                                id: generateUniqSerial(),
+                                value: "Artisticas"
+                            },
                             {
                                 id: generateUniqSerial(),
                                 value: "Artisticas"
@@ -252,6 +365,41 @@ export const Survey: Array<SurveyModel> = [
                     }
                 ]
             },
+            {
+                id: generateUniqSerial(),
+                questions: [
+                    {
+                        id: generateUniqSerial(),
+                        title: "Hablanos más de tus actividades e intereses",
+                        type: "select",
+                        placeHolder: "Selecciona una categoria de empleado privado",
+                        options: [
+                            ...PrivateEmployeeCategories
+                        ],
+                        field: "employeeSelect"
+                    },
+                    {
+                        id: generateUniqSerial(),
+                        title: "",
+                        type: "select",
+                        placeHolder: "Selecciona una categoria de empleado publico",
+                        options: [
+                            ...PublicEmployeeCategories
+                        ],
+                        field: "publicSelect"
+                    },
+                    {
+                        id: generateUniqSerial(),
+                        title: "",
+                        type: "select",
+                        placeHolder: "Selecciona una categoria de Estudiante",
+                        options: [
+                            ...StudentCategories
+                        ],
+                        field: "hobbySelect"
+                    }
+                ]
+            }
         ]
     },
     {
